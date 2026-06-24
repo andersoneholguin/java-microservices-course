@@ -1,0 +1,95 @@
+package com.vehiculo.service.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
+
+@Entity
+public class ElectricVehicle {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank
+    private String brand;
+
+    @NotBlank
+    private String model;
+
+    @NotNull
+    @PositiveOrZero
+    private Integer year;
+
+    @NotNull
+    @PositiveOrZero
+    private Double price;
+
+    @NotNull
+    @PositiveOrZero
+    private Integer rangeKm;
+
+    @NotNull
+    @PositiveOrZero
+    private Integer batteryCapacityKWh;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getRangeKm() {
+        return rangeKm;
+    }
+
+    public void setRangeKm(Integer rangeKm) {
+        this.rangeKm = rangeKm;
+    }
+
+    public Integer getBatteryCapacityKWh() {
+        return batteryCapacityKWh;
+    }
+
+    public void setBatteryCapacityKWh(Integer batteryCapacityKWh) {
+        this.batteryCapacityKWh = batteryCapacityKWh;
+    }
+}
